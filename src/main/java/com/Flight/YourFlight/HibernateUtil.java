@@ -28,6 +28,10 @@ public class HibernateUtil {
 
             configuration.setProperties(properties);
             configuration.addAnnotatedClass(Aeroport.class);
+            configuration.addAnnotatedClass(Vol.class);
+            configuration.addAnnotatedClass(Siege.class);
+            
+            
 
             StandardServiceRegistry serviceRegistry =  new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             sessionFactory= configuration.buildSessionFactory(serviceRegistry);
